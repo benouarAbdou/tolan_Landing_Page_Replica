@@ -7,9 +7,9 @@ import smallGreen2 from "../videos/small_green2.webm";
 
 const Hero = () => {
   return (
-    <div className="bg-[#F4F2E7] min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="bg-[#F4F2E7] min-h-screen p-10 flex items-center justify-center relative overflow-hidden">
       {/* Container for logo and positioned videos */}
-      <div className="relative w-full max-w-3xl mx-auto h-auto">
+      <div className="relative w-full  max-w-3xl mx-auto h-auto">
         {/* Logo as the reference point */}
         <img src={logo} alt="Logo" className="w-full h-auto relative z-10" />
 
@@ -19,8 +19,9 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          className="absolute w-24 md:w-32 lg:w-48 h-auto"
+          className="absolute h-auto"
           style={{
+            width: "25%", // Percentage of parent container width
             top: "-20%",
             left: "20%",
             zIndex: 20,
@@ -32,9 +33,10 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          className="absolute w-32 md:w-48 lg:w-64 h-auto"
+          className="absolute h-auto"
           style={{
-            top: "15%",
+            width: "30%", // Percentage of parent container width
+            top: "16%",
             left: "65%",
             zIndex: 20,
             transform: "translate(-50%, -50%)"
@@ -45,8 +47,9 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          className="absolute w-24 md:w-48 lg:w-52 h-auto"
+          className="absolute h-auto"
           style={{
+            width: "25%", // Percentage of parent container width
             top: "60%",
             left: "34%",
             zIndex: 5,
@@ -58,10 +61,11 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          className="absolute w-32 md:w-48 lg:w-64 h-auto"
+          className="absolute h-auto"
           style={{
+            width: "35%", // Percentage of parent container width
             top: "75%",
-            left: "100%",
+            left: "102%",
             zIndex: 20,
             transform: "translate(-50%, -50%)"
           }}
