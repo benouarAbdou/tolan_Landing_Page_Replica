@@ -1,15 +1,49 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import logo from "../images/hero_logo.svg";
 import smallPink from "../videos/small_pink.webm";
 import smallPurple from "../videos/small_purple.webm";
 import smallGreen1 from "../videos/small_green1.webm";
 import smallGreen2 from "../videos/small_green2.webm";
+import bigBlue from "../videos/big_blue.webm";
+import bigYellow from "../videos/big_yellow.webm";
 
 const Hero = () => {
+  const bigBlueRef = useRef(null);
+  const bigYellowRef = useRef(null);
+
+  useEffect(() => {
+    const handleVideoLoop = (videoRef) => {
+      if (videoRef.current) {
+        const video = videoRef.current;
+        video.addEventListener("ended", () => {
+          video.pause();
+          setTimeout(() => {
+            video
+              .play()
+              .catch((error) => console.error("Video play failed:", error));
+          }, 5000); // 5-second delay
+        });
+      }
+    };
+
+    handleVideoLoop(bigBlueRef);
+    handleVideoLoop(bigYellowRef);
+
+    return () => {
+      // Cleanup event listeners
+      if (bigBlueRef.current) {
+        bigBlueRef.current.removeEventListener("ended", () => {});
+      }
+      if (bigYellowRef.current) {
+        bigYellowRef.current.removeEventListener("ended", () => {});
+      }
+    };
+  }, []);
+
   return (
     <div className="bg-[#F4F2E7] min-h-screen p-10 flex items-center justify-center relative overflow-hidden">
       {/* Container for logo and positioned videos */}
-      <div className="relative w-full  max-w-3xl mx-auto h-auto">
+      <div className="relative w-full max-w-3xl mx-auto h-auto">
         {/* Logo as the reference point */}
         <img src={logo} alt="Logo" className="w-full h-auto relative z-10" />
 
@@ -71,6 +105,34 @@ const Hero = () => {
           }}
         />
       </div>
+
+      {/* Big videos positioned relative to the main div */}
+      {/*<video
+        ref={bigBlueRef}
+        src={bigBlue}
+        autoPlay
+        muted
+        className="absolute h-auto"
+        style={{
+          width: "110%", // Adjust as needed
+          bottom: "0",
+          right: "0",
+          zIndex: 255
+        }}
+      />
+      <video
+        ref={bigYellowRef}
+        src={bigYellow}
+        autoPlay
+        muted
+        className="absolute h-auto"
+        style={{
+          width: "55%", // Adjust as needed
+          bottom: "0",
+          left: "-10%",
+          zIndex: 25
+        }}
+      />*/}
     </div>
   );
 };
