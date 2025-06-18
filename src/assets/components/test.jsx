@@ -21,9 +21,9 @@ const Testimonials = ({ className }) => {
 
   return (
     <div
-      className={`flex flex-row items-center justify-center gap-4 pb-10  ${className}`}
+      className={`flex flex-wrap items-center justify-center gap-4 pb-10  ${className}`}
     >
-      <p className="text-xl font-bold text-gray-800 italic">
+      <p className="text-xl font-bold text-gray-800 text-center italic">
         "{quotes[currentQuoteIndex]}"
       </p>
       <img src={stars} alt="5 Stars" className="w-24 h-auto" />

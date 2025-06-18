@@ -114,7 +114,7 @@ const Hero = () => {
       </section>
 
       {/* Section 3: CTA */}
-      <section className="w-full  mx-auto z-30">
+      <section className="w-full  mx-auto z-0 lg:z-30">
         <Cta />
       </section>
 
