@@ -43,14 +43,19 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-[#F4F2E7] min-h-screen p-10 flex flex-col items-center justify-between relative overflow-hidden">
-      {/* Section 1: Testimonials */}
-      <section className="w-full max-w-3xl mx-auto mb-16">
+    <div className="bg-[#F4F2E7] min-h-screen p-10 flex flex-col items-center justify-between relative overflow-hidden ">
+      <section className="w-full  mx-auto mb-4 ">
+        <div className="flex justify-end md:hidden ">
+          <img src={logo} alt="Logo" className="h-[40px] w-auto" />
+        </div>
+        <div className="border-b border-black/10  my-6 md:hidden block"></div>
         <Testimonials />
+        <div className="border-b border-black/10 mt-4 md:block hidden pb-6"></div>
       </section>
+      {/* Section 1: Testimonials */}
 
       {/* Section 2: Logo and Small Characters */}
-      <section className="relative w-full max-w-3xl mx-auto mb-16 flex flex-col items-center">
+      <section className="relative w-full max-w-3xl mx-auto flex flex-col items-center">
         {/* Logo as the reference point */}
         <img src={logo} alt="Logo" className="w-full h-auto relative z-10" />
 
@@ -114,7 +119,7 @@ const Hero = () => {
       </section>
 
       {/* Section 3: CTA */}
-      <section className="w-full  mx-auto z-0 lg:z-30">
+      <section className="w-full mx-auto z-0 lg:z-30">
         <Cta />
       </section>
 

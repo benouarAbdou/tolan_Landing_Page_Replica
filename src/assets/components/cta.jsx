@@ -8,9 +8,9 @@ import PortalLogo from "../images/portla_logo.svg";
 const Cta = () => {
   return (
     <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between w-full px-4 py-2 z-0 lg:z-30">
-      <div className="flex items-center gap-2 cursor-pointer mb-4 md:mb-4 lg:mb-0">
-        <img src={QuestionIcon} alt="Question" className="w-6 h-6" />
-        <span>Learn more</span>
+      <div className="flex items-center gap-2 cursor-pointer mb-4 md:mb-4 lg:mb-0 ">
+        <img src={QuestionIcon} alt="Question" className="w-6 h-6 " />
+        <span className="hover:underline font-semibold">Learn more</span>
       </div>
       <div className="flex flex-col sm:flex-col md:flex-row items-center gap-4">
         <CustomButton
@@ -34,5 +34,4 @@ const Cta = () => {
     </div>
   );
 };
-
 export default Cta;
